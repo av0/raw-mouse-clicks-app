@@ -1,0 +1,17 @@
+{
+  "name": "raw-mouse-clicks",
+  "version": "0.1.0",
+  "description": "Using Windows Raw Input API",
+  "main": "main.js",
+  "author": "av0",
+  "license": "Proprietary",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^26.2.2"
+  },
+  "dependencies": {
+    "raw-mouse-clicks": "file:../raw-mouse-clicks/raw-mouse-clicks-0.1.0.tgz"
+  }
+}

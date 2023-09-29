@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <button id="testButton">Get mouse devices</button>
+  <ul id="mouseList"></ul>
+  <ul id="eventList"></ul>
+  <script>
+    (function () {
+      const testButton = document.getElementById("testButton");
+      const eventList = document.getElementById("eventList");
+      var mouseList = document.getElementById("mouseList");
+
+      window.rawInputAPI.onRawMouseButtonClick((_event, value) => {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(JSON.stringify(value)));
+        eventList.appendChild(li);
+      });
+
+      testButton.addEventListener("click", async () => {
+        var mouseDevices = await window.rawInputAPI.getMouseDevices();
+        for (var i = 0; i < mouseDevices.length; i++) {
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(JSON.stringify(mouseDevices[i])));
+          mouseList.appendChild(li);
+        }
+      });
+    }());
+  </script>
+</body>
+
+</html>
