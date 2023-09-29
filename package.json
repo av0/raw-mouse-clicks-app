@@ -6,10 +6,12 @@
   "author": "av0",
   "license": "Proprietary",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build-win": "electron-builder build --win --ia32 --publish never"
   },
   "devDependencies": {
-    "electron": "^26.2.2"
+    "electron": "^26.2.2",
+    "electron-builder": "^24.6.4"
   },
   "dependencies": {
     "raw-mouse-clicks": "file:../raw-mouse-clicks/raw-mouse-clicks-0.1.0.tgz"
