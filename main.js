@@ -32,10 +32,6 @@ const createWindow = function () {
 };
 
 app.on('ready', () => {
-  ipcMain.handle('alert::alert', async (message) => {
-    const alert = require('./src/rawinput/messageBox');
-    alert.alert(mainWindow, message);
-  })
   createWindow();
 });
 
