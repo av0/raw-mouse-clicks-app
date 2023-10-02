@@ -34,6 +34,18 @@
         eventList.appendChild(li);
       });
 
+      window.rawInputAPI.onRawMouseDeviceAdded((_event, value) => {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(`Mouse ${value.devicePath} added`));
+        eventList.appendChild(li);
+      });
+
+      window.rawInputAPI.onRawMouseDeviceRemoved((_event, value) => {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(`Mouse ${value.devicePath} removed`));
+        eventList.appendChild(li);
+      });
+
       testButton.addEventListener("click", async () => {
         var mouseDevices = await window.rawInputAPI.getMouseDevices();
         mouseList.innerHTML = "";
