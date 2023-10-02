@@ -1,6 +1,6 @@
 {
   "name": "raw-mouse-clicks-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Using Windows Raw Input API demo app",
   "main": "main.js",
   "author": "av0",
