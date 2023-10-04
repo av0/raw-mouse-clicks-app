@@ -21,16 +21,10 @@
       const testButton = document.getElementById("testButton");
       const eventList = document.getElementById("eventList");
       var mouseList = document.getElementById("mouseList");
-      const mice = new Map();
 
       window.rawInputAPI.onRawMouseButtonClick((_event, value) => {
-        let mouseNumber = mice.get(value.devicePath);
-        if (!mouseNumber) {
-          mouseNumber = mice.size + 1;
-          mice.set(value.devicePath, mouseNumber);
-        }
         var li = document.createElement("li");
-        li.appendChild(document.createTextNode(`Mouse ${mouseNumber} button ${value.button} clicked`));
+        li.appendChild(document.createTextNode(`Mouse ${value.devicePath} button ${value.button} clicked`));
         eventList.appendChild(li);
       });
 
