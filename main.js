@@ -2,7 +2,7 @@
 
 const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('node:path')
-const rawinput = require('raw-mouse-clicks');
+const rawinput = require('raw-mouse-click');
 
 let mainWindow;
 
